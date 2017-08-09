@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/tvform}" th:object="${tvshow}" method="post">
+
+    <span th:if="${#fields.hasErrors('id')}" th:error="*{id}">ID is required</span>
+    <p>Enter the ID: <input type="number" th:field="*{id}" /></p>
+
+    <span th:if="${#fields.hasErrors('name')}" th:error="*{name}">Name is required</span>
+    <p>Enter the Name: <input type="text" th:field="*{name}" /></p>
+
+    <span th:if="${#fields.hasErrors('type')}" th:error="*{type}">Type is required</span>
+    <p>Enter the type: <input type="text" th:field="*{type}" /></p>
+
+
+    <span th:if="${#fields.hasErrors('description')}" th:error="*{description}">Description is required</span>
+    <p>Enter the Description: <textarea rows="3" th:field="*{description}" /></p>
+
+    <br />
+
+    <p><input type="submit" value="Add the Tvshow" /> <input type="reset" value="Reset" /></p>
+
+
+</form>
+
+</body>
+</html>
